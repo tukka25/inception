@@ -1,0 +1,10 @@
+1.What is NGINX?
+	i.nginx is a open source web server that  designed to handle high number of connection simultaneously.
+	ii.NGINX is often used as a reverse proxy. This means you’ll typically find it stationed behind a firewall in a private network, where it forwards client requests to the appropriate server.
+	iii.NGINX also acts as a load balancer. This means it distributes requests across multiple servers so that they won’t become overloaded.
+
+2.How does it work?
+	i.NGINX uses an asynchronous, event-driven approach to handling requests.
+	Instead of creating a new process for each request (as often happens with other web servers),
+	it handles multiple requests in a single worker process. To do this, it works with non-blocking sockets and uses efficient event notification interfaces such as epoll and kqueue.
+
