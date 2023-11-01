@@ -19,8 +19,8 @@
 # Default server configuration
 #
 server {
-        listen 80 default_server;
-        listen [::]:80 default_server;
+        # listen 80 default_server;
+        # listen [::]:80 default_server;
 
         # SSL configuration
         #
@@ -28,7 +28,7 @@ server {
         listen [::]:443 ssl default_server;
         server_name     localhost;
         ssl_certificate /etc/ssl/certs/nginx-selfsigned.crt;
-        ssl_certificate_key     /etc/ssl/private/nginx-selfsigned.key;
+        ssl_certificate_key     /etc/ssl/private/self-signed.key;
         ssl_protocols   TLSv1.2;
         root    /etc/web/;
         # Note: You should disable gzip for SSL traffic.

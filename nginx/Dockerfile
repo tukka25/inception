@@ -1,4 +1,4 @@
-FROM debian:latest
+FROM debian:bullseye
 
 EXPOSE 443
 
@@ -8,10 +8,12 @@ RUN apt-get update && apt-get install -y sudo && sudo apt-get -y install nginx &
 
 COPY self-signed.crt /etc/ssl/certs/nginx-selfsigned.crt
 
-COPY self-signed.key /etc/ssl/private/nginx-selfsigned.key
+COPY self-signed.key /etc/ssl/private/
 
 COPY def /etc/nginx/sites-available/default
 
-COPY ngi.conf /etc/nginx/nginx.config
+COPY nginx.conf /etc/nginx/nginx.config
 
 CMD ["sleep", "infinity"]
+
+VOLUME [ "/var/www/html/wordpress" ]

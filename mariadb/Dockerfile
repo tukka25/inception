@@ -1,5 +1,11 @@
-FROM debian:penultimate
+FROM debian:bullseye
 
-RUN	apt-get update && apt-get install sudo
+EXPOSE 3306
 
-CMD ["sleep", "infinity"]
+EXPOSE 9000
+
+COPY mariacon.sh /usr/bin
+
+RUN	apt-get update && apt-get install -y systemctl && apt-get install -y mariadb-server
+
+CMD ["mariacon.sh"]
