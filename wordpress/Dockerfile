@@ -1,6 +1,6 @@
 FROM debian:bullseye
 
-# EXPOSE 3306
+EXPOSE 3306
 
 EXPOSE 9000
 
@@ -20,6 +20,6 @@ RUN wordpress.sh
 
 RUN apt update && php-fpm7.4
 
-CMD ["sleep", "infinity"]
+CMD ["php-fpm7.4", "-F"]
 
-VOLUME [ "/var/www/html/wordpress" ]
+# VOLUME [ "/var/www/html/wordpress" ]

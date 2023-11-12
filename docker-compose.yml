@@ -1,38 +1,58 @@
+version: '3.8'
 services:
+  mariadb:
+    container_name: mariadb
+    build: ./mariadb/.
+    networks:
+      - word-db
+    env_file:
+      - ./.env
+    volumes:
+      - mariadb-vol:${MDB_VOLUME}
+    restart:
+      on-failure  
+  wordpress:
+    container_name: wordpress
+    build: ./wordpress/.
+    networks:
+      - nginx-word
+      - word-db
+    env_file:
+      - ./.env
+    volumes:
+      - ngin-word:${WP_VOLUME}
+    depends_on:
+      - mariadb
+    restart:
+      on-failure  
   nginx:
+    container_name: nginx
     build: ./nginx/.
     ports:
       - 443:443
     networks:
       - nginx-word
-    volumes:
-      - ${HOST_PATH_NGINX}:${WP_VOLUME}
-    env_file:
-      - ./.env
-  mariadb:
-    build: ./mariadb/.
-    ports: 
-      - 3306:3306
-    networks:
-      - word-db
     env_file:
       - ./.env
     volumes:
-      - ${HOST_PATH_DB}:${MDB_VOLUME}
-  wordpress:
-    build: ./wordpress/.
-    ports:
-      - 9000:9000
-    networks :
-      - nginx-word
-      - word-db
-    env_file:
-      - ./.env
-    volumes:
-      - $HOST_PATH_NGINX:$WP_VOLUME
+      - ngin-word:${WP_VOLUME}
+    depends_on:
+      - wordpress
+    restart:
+      on-failure  
 networks:
-  word-db:
   nginx-word:
-
+  word-db:
+volumes:
+  ngin-word:
+    driver_opts:
+      o: bind
+      type: none
+      device: /Users/atukka/Desktop/cursus/inception/t
+  mariadb-vol:
+    driver_opts:
+      o: bind
+      type: none
+      device: /Users/atukka/Desktop/cursus/inception/b
 
   

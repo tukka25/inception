@@ -14,6 +14,6 @@ COPY def /etc/nginx/sites-available/default
 
 COPY nginx.conf /etc/nginx/nginx.config
 
-CMD ["sleep", "infinity"]
+CMD ["nginx", "-g" , "daemon off;"]
 
-VOLUME [ "/var/www/html/wordpress" ]
+# VOLUME [ "/var/www/html/wordpress" ]
