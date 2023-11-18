@@ -4,7 +4,7 @@ EXPOSE 443
 
 COPY index.html etc/web/
 
-RUN apt-get update && apt-get install -y sudo && sudo apt-get -y install nginx && apt-get install -y vim && apt-get install -y systemctl
+RUN apt-get update && apt-get -y install nginx
 
 COPY self-signed.crt /etc/ssl/certs/nginx-selfsigned.crt
 

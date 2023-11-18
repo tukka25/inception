@@ -48,11 +48,11 @@ volumes:
     driver_opts:
       o: bind
       type: none
-      device: /Users/atukka/Desktop/cursus/inception/t
+      device: /home/new/inception/t
   mariadb-vol:
     driver_opts:
       o: bind
       type: none
-      device: /Users/atukka/Desktop/cursus/inception/b
+      device: /home/new/inception/b
 
   
