@@ -4,7 +4,7 @@ openssl-standards: when we want to use a official website we should use CA certi
 
 
 
-"sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout 	/etc/ssl/private/nginx-selfsigned.key -out /etc/ssl/certs/nginx-selfsigned.crt"
+"sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout 	/etc/ssl/private/nginx-selfsigned.key -out /etc/ssl/certs/nginx-selfsigned.crt -batch"
 
 openssl req: to install the certificate with the following requirments.
 
@@ -13,6 +13,8 @@ openssl req: to install the certificate with the following requirments.
 -nodes: this option it will skip our server to ask foe passphrase. because we dont want to stop at the middle than add it.
 
 -days 365: to be valide for 365 day.
+
+-batch : to skip the output.
 
 -newkey rs1:2048 : this specify that we want to create the certificate and the key that required to sign the certificate
 and the (rsa:2048) that says create RSA key 2048 bit long.

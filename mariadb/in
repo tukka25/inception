@@ -1,9 +1,0 @@
-mysql_install_db --datadir=$DB_INSTALL
-
-
-
-CREATE TABLE gg (
-    column1_name INT,
-    column2_name INT,
-    column3_name INT
-);
