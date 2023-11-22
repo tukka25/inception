@@ -48,11 +48,11 @@ volumes:
     driver_opts:
       o: bind
       type: none
-      device: /home/new/inception/t
+      device: $HOST_PATH_WP
   mariadb-vol:
     driver_opts:
       o: bind
       type: none
-      device: /home/new/inception/b
+      device: $HOST_PATH_DB
 
   

@@ -14,16 +14,8 @@ RUN apt-get update \
 		&&	mv wp-cli.phar /usr/local/bin/wp \
 		&& wp core download --allow-root
 
-COPY wp.conf /var/www/html/wordpress/wp-config.php
-
 COPY wordpress.sh /bin/
 
 COPY www.conf /etc/php/7.4/fpm/pool.d/www.conf
 
-RUN wordpress.sh
-
-RUN apt update && php-fpm7.4
-
-CMD ["php-fpm7.4", "-F"]
-
-# VOLUME [ "/var/www/html/wordpress" ]
+CMD ["wordpress.sh"]
