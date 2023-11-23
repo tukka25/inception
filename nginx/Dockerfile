@@ -9,4 +9,4 @@ COPY def /etc/nginx/sites-available/default
 
 COPY nginx.conf /etc/nginx/nginx.config
 
-CMD ["nginx", "-g", "deamon off;"]
+CMD ["nginx", "-g", "daemon off;"]

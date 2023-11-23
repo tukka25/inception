@@ -25,11 +25,11 @@ server {
         # SSL configuration
         #
         listen 443 ssl default_server;
-        listen [::]:443 ssl default_server;
+        # listen [::]:443 ssl default_server;
         server_name     abdamoha.42.fr;
         ssl_certificate /etc/ssl/certs/nginx-selfsigned.crt;
-        ssl_certificate_key     /etc/ssl/private/self-signed.key;
-        ssl_protocols   TLSv1.2;
+        ssl_certificate_key     /etc/ssl/private/nginx-selfsigned.key;
+        ssl_protocols   TLSv1.2 TLSv1.3;
         root    /var/www/html/wordpress;
         # Note: You should disable gzip for SSL traffic.
         # See: https://bugs.debian.org/773332
@@ -63,16 +63,6 @@ server {
               fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
               include fastcgi_params;
         }
-        # location ~ \.php$ {
-        #         try_files $uri =404;
-        #         include /etc/nginx/fastcgi_params;
-        #         fastcgi_read_timeout 3600s;
-        #         fastcgi_buffer_size 128k;
-        #         fastcgi_buffers 4 128k;
-        #         fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
-        #         fastcgi_pass unix:/run/php/php7.3-fpm.sock;
-        #         fastcgi_index index.php;
-        # }
         # deny access to .htaccess files, if Apache's document root
         # concurs with nginx's one
         #
