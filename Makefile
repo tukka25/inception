@@ -7,13 +7,14 @@ up:
 	fi
 	sudo mkdir -p /home/abdamoha/data/mariadb
 	sudo mkdir -p /home/abdamoha/data/wordpress
-	sudo docker-compose up
+	sudo docker-compose up -d
+	@echo "\033[0;32mFinished Building\033[0m";
 down:
 	sudo docker-compose down
 	sudo docker system prune --all -a -f
 	sudo rm -rf /home/abdamoha/data/mariadb /home/abdamoha/data/wordpress
 ifeq (0, $(shell docker volume ls -q | wc -l))
-	@echo "No Docker volumes to remove."
+	@echo "\033[0;31mNo Docker volumes to remove.\033[0m"
 else
 		@sudo docker volume rm -f $$(docker volume ls -q)
 endif

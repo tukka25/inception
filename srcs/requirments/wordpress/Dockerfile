@@ -1,7 +1,5 @@
 FROM debian:bullseye
 
-EXPOSE 3306
-
 EXPOSE 9000
 
 RUN apt-get update \
