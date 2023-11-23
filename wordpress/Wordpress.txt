@@ -1,3 +1,0 @@
-unzip latest.zip -d /var/www/html/
-
-to extract inside "-d" dierctory "/var/www/html/"

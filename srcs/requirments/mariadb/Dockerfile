@@ -6,7 +6,7 @@ ARG DB_USER DB_NAME DB_PASSWORD
 
 EXPOSE 9000
 
-COPY mariacon.sh /usr/bin
+COPY ./tools/mariacon.sh /usr/bin
 
 RUN	apt-get update && apt-get install -y mariadb-server
 

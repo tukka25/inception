@@ -14,8 +14,8 @@ RUN apt-get update \
 		&&	mv wp-cli.phar /usr/local/bin/wp \
 		&& wp core download --allow-root
 
-COPY wordpress.sh /bin/
+COPY ./tools/wordpress.sh /bin/
 
-COPY www.conf /etc/php/7.4/fpm/pool.d/www.conf
+COPY ./conf/www.conf /etc/php/7.4/fpm/pool.d/www.conf
 
 CMD ["wordpress.sh"]
