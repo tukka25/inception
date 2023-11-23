@@ -5,7 +5,7 @@ EXPOSE 3306
 EXPOSE 9000
 
 RUN apt-get update \
-		&& apt-get install sudo wget unzip php php-curl php-fpm php-bcmath php-gd php-soap php-zip php-curl php-mbstring php-mysqlnd php-gd php-xml php-intl php-zip -y \
+		&& apt-get install wget unzip php php-curl php-fpm php-bcmath php-gd php-soap php-zip php-curl php-mbstring php-mysqlnd php-gd php-xml php-intl php-zip -y \
 		&& wget https://wordpress.org/latest.zip \
 		&& mkdir /var/www/ \
 		&& unzip latest.zip -d /var/www/html/ \
