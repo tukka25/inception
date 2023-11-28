@@ -7,10 +7,10 @@ up:
 	fi
 	sudo mkdir -p /home/abdamoha/data/mariadb
 	sudo mkdir -p /home/abdamoha/data/wordpress
-	sudo docker-compose up -d
+	cd srcs && sudo docker-compose up -d
 	@echo "\033[0;32mFinished Building\033[0m";
 down:
-	sudo docker-compose down
+	cd srcs && sudo docker-compose down
 	sudo docker system prune --all -a -f
 	sudo rm -rf /home/abdamoha/data/mariadb /home/abdamoha/data/wordpress
 ifeq (0, $(shell docker volume ls -q | wc -l))
