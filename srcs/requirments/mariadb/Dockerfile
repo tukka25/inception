@@ -8,6 +8,6 @@ EXPOSE 9000
 
 COPY ./tools/mariacon.sh /usr/bin
 
-RUN	apt-get update && apt-get install -y mariadb-server
+RUN	apt-get update && chmod 777 /usr/bin/mariacon.sh &&  apt-get install -y mariadb-server
 
 CMD ["mariacon.sh"]

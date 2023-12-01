@@ -3,6 +3,7 @@ services:
   mariadb:
     container_name: mariadb
     build: ./requirments/mariadb/.
+    image: mariadb
     networks:
       - word-db
     env_file:
@@ -14,6 +15,7 @@ services:
   wordpress:
     container_name: wordpress
     build: ./requirments/wordpress/.
+    image: wordpress
     networks:
       - nginx-word
       - word-db
@@ -28,6 +30,7 @@ services:
   nginx:
     container_name: nginx
     build: ./requirments/nginx/.
+    image: nginx
     ports:
       - 443:443
     networks:
