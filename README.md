@@ -1,7 +1,4 @@
-
-Certainly! Writing a README is a crucial aspect of your GitHub repository, as it helps users understand your project and get started with it. Below is a basic template for a README file for your Inception project connecting three Docker containers (WordPress, MariaDB, Nginx) with a full script and .env configuration. Feel free to customize it based on your project specifics:
-
-Project Inception
+Project Inception:
 This project aims to provide a seamless setup for a web development environment using Docker containers. It includes configurations for running WordPress, MariaDB, and Nginx, allowing you to quickly set up a fully functional web stack.
 
 Prerequisites
