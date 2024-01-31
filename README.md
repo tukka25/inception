@@ -21,7 +21,7 @@ Copy code
 cp .env.example .env
 Edit the .env file with your desired settings.
 
-## Run the Docker containers:
+## Run the Docker containers:**
 
 ```bash
 Copy code
