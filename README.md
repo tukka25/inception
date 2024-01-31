@@ -14,9 +14,10 @@ This project aims to provide a seamless setup for a web development environment 
    git clone https://github.com/your-username/inception.git
    cd inception
 
-2. ### Create a .env file with your configurations:***
 
-bash
+2. ### Create a .env file with your configurations:
+
+```bash
 cp .env.example .env
 Edit the .env file with your desired settings.
 
